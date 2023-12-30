@@ -74,7 +74,7 @@ Enter the number of days you will be skipping after today.
 Number of absences:         3
 ```
 
-Enter the days you will be skipping. The next working day is day 1.
+Enter the days you will be skipping. The next working day is day 1. Input the days in ascending order.
 ```
 # Example input : Skipping the next first three working days.
 Skipping the following days:
