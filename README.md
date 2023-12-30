@@ -30,14 +30,14 @@ Enter the percentage required in numbers :      75
 
 Moving forward, an input of your schedule will be required.
 ```
-# Example input : Number of hours on each day are given below
+# Example input: Number of hours on each day are given below
 #   Monday (Day 0) = 1
 #   Tuesday (Day 1) = 0
 #   Wednesday (Day 2) = 2
 #   Thursday (Day 3) = 1
 #   Friday (Day 4) = 1
 #   Saturday (Day 5) = 0
-Enter hours in week :
+Schedule :
          Day 0 ; Hours :        1
          Day 1 ; Hours :        0
          Day 2 ; Hours :        2
@@ -51,8 +51,8 @@ Enter the hours you have been present for currently and the total number of hour
 #Example input : 
 #   Present 10 hours
 #   Total 15 hours conducted
-Enter your present hours (after today's hours):         10
-Enter total hours (after today's hours):        15
+Present Hours:         10
+Total Hours:        15
 ```
 
 Enter the next working day.
@@ -65,19 +65,19 @@ Enter :
   5 for Saturday
 ```
 # Example input : Thursday
-Enter day tomorrow :    3
+Next working day:    3
 ```
 
 Enter the number of days you will be skipping after today.
 ```
 # Example input : Absence of 3 days
-Enter number of days you are skipping :         3
+Number of absences:         3
 ```
 
 Enter the days you will be skipping. The next working day is day 1.
 ```
 # Example input : Skipping the next first three working days.
-Enter the days you are skipping (Next working day is day 1, so if you want to skip the day after tomorrow enter 2 and so on. And if you are skipping multiple days enter all the day numbers. Enter after each day.Enter in ascneding order.):
+Skipping the following days:
 1
 2
 3
@@ -89,9 +89,9 @@ The program will then display a table-format tracking of the attendance percenta
 Day     Pre/Tot %
 =====================
 0       10/15   66.666667
-Day 1 : 10 / 16 - 62.500000
-Day 2 : 10 / 17 - 58.823529
-Day 3 : 10 / 17 - 58.823529
+1       10/16   62.500000       (SKIPPED)
+2       10/17   58.823529       (SKIPPED)
+3       10/17   58.823529       (SKIPPED)
 4       11/18   61.111111
 5       11/18   61.111111
 6       13/20   65.000000
