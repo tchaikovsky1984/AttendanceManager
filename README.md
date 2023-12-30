@@ -23,13 +23,13 @@ att.exe
 
 ## Usage
 After running the executable file, the program asks for your attendance requirement goal. Enter the attendance percentage requirement/goal.
-```bash
+```
 # Example input : 75%
 Enter the percentage required in numbers :      75
 ```
 
 Moving forward, an input of your schedule will be required.
-```bash
+```
 # Example input : Number of hours on each day are given below
 #   Monday (Day 0) = 1
 #   Tuesday (Day 1) = 0
@@ -47,7 +47,7 @@ Enter hours in week :
 ```
 
 Enter the hours you have been present for currently and the total number of hours conducted.
-```bash
+```
 #Example input : 
 #   Present 10 hours
 #   Total 15 hours conducted
@@ -63,19 +63,19 @@ Enter :
   3 for Thursday
   4 for Friday
   5 for Saturday
-```bash
+```
 # Example input : Thursday
 Enter day tomorrow :    3
 ```
 
 Enter the number of days you will be skipping after today.
-```bash
+```
 # Example input : Absence of 3 days
 Enter number of days you are skipping :         3
 ```
 
 Enter the days you will be skipping. The next working day is day 1.
-```bash
+```
 # Example input : Skipping the next first three working days.
 Enter the days you are skipping (Next working day is day 1, so if you want to skip the day after tomorrow enter 2 and so on. And if you are skipping multiple days enter all the day numbers. Enter after each day.Enter in ascneding order.):
 1
@@ -84,7 +84,7 @@ Enter the days you are skipping (Next working day is day 1, so if you want to sk
 ```
 
 The program will then display a table-format tracking of the attendance percentage until the attendance criteria is met.
-```bash
+```
 # For the given example
 Day     Pre/Tot %
 =====================
