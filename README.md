@@ -3,7 +3,13 @@ A basic non-GUI attendance checking and absence managing program written in C. T
 Starting from the next working day, and displays the predicted attendance for each day.
 
 ## Installation
-Use a C compiler such as GCC or Clang to compile the C file and run it
+Run the following command
+
+```
+git clone https://github.com/tchaikovsky1984/AttendanceManager.git
+```
+
+Use a C compiler such as GCC or Clang to compile the C file and run it.
 
 Linux:
 ```bash
