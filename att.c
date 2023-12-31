@@ -2,10 +2,18 @@
 #include <stdlib.h>
 int main()
 {
+	/*
+	 * arr[] is an array storing the number of hours in each working day
+	 * *skip is a pointer to an array of the days to be skipped
+	 * n_skip is the number of days to be skipped
+	 */
 	int arr[6], *skip;
 	int i,n=1,pre,occ,n_skip,j,f=1;
 	double att,req;
 	printf("========ATTENDANCE CHECK | BUNK MANAGER========\n");
+	/*
+	 * INPUT
+	 */
 	printf("Percentage required in numbers : \t");
 	scanf("%lf", &req);
 	printf("Schedule : \n");
@@ -29,6 +37,9 @@ int main()
 	for(j=0;j<n_skip;j++){
 		scanf("%d",&skip[j]);
 	}
+	/*
+	 * PRINTING TABLE OUTPUT
+	 */
 	for(j=0;j<n_skip;j++)
 		printf("Skipping Day %d\n",skip[j]);
 	printf("Day     Pre/Tot %\n=====================\n");
@@ -38,6 +49,7 @@ int main()
 	{
 		if(n!=skip[j+1] || j>=n_skip)
 		{
+			// day attended
 			pre = pre + arr[i];
 			occ = occ + arr[i];
 			att = (double)pre/(double)occ;
@@ -47,6 +59,7 @@ int main()
 		}
 		else
 		{
+			// day skipped
 			occ = occ + arr[i];
 			att = (double)pre/(double)occ;
 			printf("%d\t%d/%d\t%lf\t(SKIPPED)\n",n,pre,occ,(att*100));
@@ -54,7 +67,7 @@ int main()
 			n++;
 			j++;
 		}
-	}while(att<=(req/100.0));
-	free(skip);
+	}while(att<=(req/100.0)); // checking attedance criteria/goal
+	free(skip);				  // freeing heap memory
 	return 0;
 }
