@@ -24,7 +24,7 @@ int main()
 	}
 	printf("Present Hours: \t");
 	scanf("%d",&pre);
-	print("Total Hours: \t");
+	printf("Total Hours: \t");
 	scanf("%d",&occ);
 	printf("Next working day: \t");
 	scanf("%d",&i);
