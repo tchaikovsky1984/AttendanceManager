@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-int main()
-{
-	/*
-	 * arr[] is an array storing the number of hours in each working day
-	 * *skip is a pointer to an array of the days to be skipped
-	 * n_skip is the number of days to be skipped
-	 */
-	int arr[6], *skip;
-	int i,n=1,pre,occ,n_skip,j,f=1;
-	double att,req;
-	printf("========ATTENDANCE CHECK | BUNK MANAGER========\n");
+
+
+/*
+ * arr[] is an array storing the number of hours in each working day
+ * *skip is a pointer to an array of the days to be skipped
+ * n_skip is the number of days to be skipped
+ */
+int arr[6], *skip;
+int i,n=1,pre,occ,n_skip,j,f=1;
+double att,req;
+
+void input(){
 	/*
 	 * INPUT
 	 */
@@ -37,6 +38,10 @@ int main()
 	for(j=0;j<n_skip;j++){
 		scanf("%d",&skip[j]);
 	}
+	return;
+}
+
+void output(){
 	/*
 	 * PRINTING TABLE OUTPUT
 	 */
@@ -67,7 +72,15 @@ int main()
 			n++;
 			j++;
 		}
-	}while(att<=(req/100.0)); // checking attedance criteria/goal
+	}while(att<=(req/100.0)); // checking attendance criteria/goal
+	return;
+}
+
+int main()
+{
+	printf("========ATTENDANCE CHECK | BUNK MANAGER========\n");
+	input();
+	output();
 	free(skip);				  // freeing heap memory
 	return 0;
 }
