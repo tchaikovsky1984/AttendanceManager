@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+// CLI to be added
 /*
  * arr[] is an array storing the number of hours in each working day
  * *skip is a pointer to an array of the days to be skipped
