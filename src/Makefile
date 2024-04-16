@@ -3,6 +3,7 @@ all : atc
 atc : att.out parse.out
 	@echo "Linking parse and att binaries"
 	gcc att.out parse.out -o atc
+	chmod +x atc
 
 att.out : att.c
 	@echo "Compiling att.c"
