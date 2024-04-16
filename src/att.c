@@ -75,11 +75,12 @@ void output(){
 	return;
 }
 
-int main()
+int main(int argc, char **argv)
 {
 	printf("========ATTENDANCE CHECK========\n");
-	input();
-	output();
+	//input();
+	//output();
+  printf("%d\n", parseData(argv, argc, &req, &occ, &pre, &skip, &n_skip, &i, *arr));
 	free(skip);				  // freeing heap memory
 	return 0;
 }
