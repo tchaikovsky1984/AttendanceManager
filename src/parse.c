@@ -2,7 +2,28 @@
 #include <string.h>
 
 int strToInt(char *s, int n){
-  return 0;
+  int x = 0;
+  char c;
+  while(c!='\0')
+    x = x*10 + ((int)c - 48);
+  return x;
+}
+
+double strToDouble(char *s, int n){
+  double x = 0.0;
+  int j = 0;
+  char c;
+  for(j = 0; j < n; j++){
+
+  }
+  return x;
+}
+
+void setReq(double *req, char *s){
+  double r;
+  r = strToDouble(s, strlen(s));
+  *req = r;
+  return;
 }
 
 int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip, int *n_skip, int *i, int **arr){
@@ -30,7 +51,15 @@ int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip
       }
     }
     else{
-
+      switch(mode){
+        case 1: setReq(req, s);
+                mode = 0;
+                break;
+        case 2: 
+        
+        case 0: return 2;
+        default: break; 
+      }
     }
   }
   return 0;
@@ -38,5 +67,5 @@ int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip
 
 /* Return Values : 
 *    1 - Invalid Flag
-*    2 - Number of Arguments
+*    2 - Number of Arguments / Arguments b4 FLags
 */
