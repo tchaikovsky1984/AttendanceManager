@@ -41,6 +41,7 @@ int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip
   char *s;
   for(j = 1; j < argc; j++){
     s = argv[j];
+    printf("Arg %d = %s\n",j,s);
     if(s[0] == '-'){
       switch(s[1]){
         case 'r': mode = 1;
@@ -59,24 +60,31 @@ int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip
                   break;
         default: return 1;
       }
+      printf("\tmode = %d",mode);
     }
     else{
       switch(mode){
         case 1: setDoub(req, s);
+                printf("\tSetting req to %lf", *req);
                 mode = 0;
                 break;
         case 2: setInt(occ, s);
+                printf("\tSetting occ to %d",*occ);
                 mode = 0;
                 break;
         case 3: setInt(pre, s);
+                printf("\tSetting pre to %d",*pre);
                 mode = 0;
                 break;
         case 4: setIntArr(skip, s, x);
+                printf("\tSetting skip[%d] to %d",x,(*skip)[x]);
                 break;
         case 5: setInt(n_skip, s);
+                printf("\tSetting n_skip to %d",*n_skip);
                 mode = 0;
                 break;
         case 6: setInt(i, s);
+                printf("\tSetting i to %d", *i);
                 mode = 0;
                 break;
         case 7: setIntArr(arr, s, y);
@@ -85,6 +93,7 @@ int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip
         default: break; 
       }
     }
+    printf("\n");
   }
   return 0;
 }
