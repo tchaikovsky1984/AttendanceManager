@@ -1,33 +1,43 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 int strToInt(char *s, int n){
-  int x = 0;
+  int i, x = 0;
   char c;
-  while(c!='\0')
+  for(i = 0; i < n; i++){
+    c = s[i];
     x = x*10 + ((int)c - 48);
-  return x;
-}
-
-double strToDouble(char *s, int n){
-  double x = 0.0;
-  int j = 0;
-  char c;
-  for(j = 0; j < n; j++){
-
   }
   return x;
 }
 
-void setReq(double *req, char *s){
+void setDoub(double *req, char *s){
   double r;
-  r = strToDouble(s, strlen(s));
+  r = (double)strToInt(s, strlen(s));
   *req = r;
   return;
 }
 
+void setInt(int *n, char *s){
+  int l;
+  l = strToInt(s, strlen(s));
+  *n = l;
+  return;
+}
+
+void setIntArr(int **arr, char *s, int in){
+  int l;
+  for(l=0;l<5;l++)
+    printf("%d\t",(*arr)[l]);
+  printf("\n");
+  l = strToInt(s, strlen(s));
+  (*arr)[in] = l;
+  return;
+}
+
 int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip, int *n_skip, int *i, int **arr){
-  int j, mode;
+  int j, mode, x = 0, y = 0;
   char *s;
   for(j = 1; j < argc; j++){
     s = argv[j];
@@ -52,11 +62,25 @@ int parseData(char **argv, int argc, double *req, int *occ, int *pre, int **skip
     }
     else{
       switch(mode){
-        case 1: setReq(req, s);
+        case 1: setDoub(req, s);
                 mode = 0;
                 break;
-        case 2: 
-        
+        case 2: setInt(occ, s);
+                mode = 0;
+                break;
+        case 3: setInt(pre, s);
+                mode = 0;
+                break;
+        case 4: setIntArr(skip, s, x);
+                break;
+        case 5: setInt(n_skip, s);
+                mode = 0;
+                break;
+        case 6: setInt(i, s);
+                mode = 0;
+                break;
+        case 7: setIntArr(arr, s, y);
+                break;
         case 0: return 2;
         default: break; 
       }

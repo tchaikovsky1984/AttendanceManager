@@ -81,6 +81,6 @@ int main(int argc, char **argv)
 	//input();
 	//output();
   printf("%d\n", parseData(argv, argc, &req, &occ, &pre, &skip, &n_skip, &i, *arr));
-	free(skip);				  // freeing heap memory
+  free(skip);				  // freeing heap memory
 	return 0;
 }
